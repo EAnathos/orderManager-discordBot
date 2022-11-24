@@ -4,5 +4,6 @@
  Afin d'utiliser ce bot vous-mêmes, il y a quelques procédures à suivre au préalable.
 
  ## Crée son bot
- (Rendez vous sur le portail de développeur discord)[https://discord.com/developers/applications].
+ [Rendez vous sur le portail de développeur discord](https://discord.com/developers/applications).
  En haut à droite, cliquez sur New Application
+ ![New Application Image](https://github.com/EAnathos/orderManager-discordBot/blob/main/images/new_application.png)
