@@ -1,5 +1,6 @@
 const { SlashCommandBuilder, ActionRowBuilder, ModalBuilder, TextInputBuilder, TextInputStyle } = require('discord.js');
 
+
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('create')
@@ -28,7 +29,7 @@ module.exports = {
             .setStyle(TextInputStyle.Short)
             .setRequired(true);
 
-        const serverVersion = new TextInputBuilder()
+        const pluginName = new TextInputBuilder()
             .setCustomId('pluginName_Id')
             .setLabel("Nom du plugin de la commande")
             .setPlaceholder(`Insérer le nom du plugin`)
@@ -51,7 +52,7 @@ module.exports = {
         
         const firstActionRow = new ActionRowBuilder().addComponents(clientName);
         const secondActionRow = new ActionRowBuilder().addComponents(serverName);
-        const thirdActionRow = new ActionRowBuilder().addComponents(serverVersion);
+        const thirdActionRow = new ActionRowBuilder().addComponents(pluginName);
         const fourthActionRow = new ActionRowBuilder().addComponents(orderPrice);
         const fifthActionRow = new ActionRowBuilder().addComponents(deadlineDate);;
 
