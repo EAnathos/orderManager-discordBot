@@ -1,3 +1,6 @@
 {
-	"TOKEN": "votre-token-va-ici"
+	"TOKEN": "votre-token-va-ici",
+    "CLIENTID" : "Id de votre bot",
+    "GUILDID" : "Id de votre serveur"
+    
 }
