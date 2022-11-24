@@ -15,7 +15,7 @@ module.exports = {
             // The label is the prompt the user sees for this input
             .setLabel("Client de la commande")
             // set a placeholder string to prompt the user
-            .setPlaceholder(`Insérer le pseudo de votre client ?`)
+            .setPlaceholder(`Insérer le pseudo de votre client`)
             // Short means only a single line of text, Paragraph means a multi-line text entry
             .setStyle(TextInputStyle.Short)
             // require a value in this input field
@@ -24,28 +24,28 @@ module.exports = {
         const serverName = new TextInputBuilder()
             .setCustomId('serverName_Id')
             .setLabel("Nom du serveur de la commande")
-            .setPlaceholder(`Insérer le nom du serveur de votre client ?`)
+            .setPlaceholder(`Insérer le nom du serveur`)
             .setStyle(TextInputStyle.Short)
             .setRequired(true);
 
         const serverVersion = new TextInputBuilder()
-            .setCustomId('serverOrder_Id')
-            .setLabel("Version du serveur de la commande")
-            .setPlaceholder(`Insérer la version du serveur de votre client ?`)
+            .setCustomId('pluginName_Id')
+            .setLabel("Nom du plugin de la commande")
+            .setPlaceholder(`Insérer le nom du plugin`)
             .setStyle(TextInputStyle.Short)
             .setRequired(true);
 
         const orderPrice = new TextInputBuilder()
             .setCustomId('orderPrice_Id')
             .setLabel("Prix de la commande")
-            .setPlaceholder(`Insérer le prix de votre commande ?`)
+            .setPlaceholder(`Insérer le prix de votre commande`)
             .setStyle(TextInputStyle.Short)
             .setRequired(true);
 
         const deadlineDate = new TextInputBuilder()
             .setCustomId('deadlineDate_Id')
             .setLabel("deadline de la commande")
-            .setPlaceholder(`Insérer la deadline de votre commande ?`)
+            .setPlaceholder(`Insérer la deadline de votre commande`)
             .setStyle(TextInputStyle.Short)
             .setRequired(true);
         
