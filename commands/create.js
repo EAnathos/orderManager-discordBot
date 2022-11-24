@@ -11,7 +11,7 @@ module.exports = {
         
         // Create the text input components
 		const clientName = new TextInputBuilder()
-            .setCustomId('clientOrderId')
+            .setCustomId('clientOrder_Id')
             // The label is the prompt the user sees for this input
             .setLabel("Client de la commande")
             // set a placeholder string to prompt the user
@@ -22,37 +22,30 @@ module.exports = {
             .setRequired(true);
 
         const serverName = new TextInputBuilder()
-            .setCustomId('serverOrderId')
-            .setLabel("Serveur de la commande")
+            .setCustomId('serverName_Id')
+            .setLabel("Nom du serveur de la commande")
             .setPlaceholder(`Insérer le nom du serveur de votre client ?`)
             .setStyle(TextInputStyle.Short)
             .setRequired(true);
 
         const serverVersion = new TextInputBuilder()
-            .setCustomId('serverOrderId')
-            .setLabel("Serveur de la commande")
-            .setPlaceholder(`Insérer le nom du serveur de votre client ?`)
+            .setCustomId('serverOrder_Id')
+            .setLabel("Version du serveur de la commande")
+            .setPlaceholder(`Insérer la version du serveur de votre client ?`)
             .setStyle(TextInputStyle.Short)
             .setRequired(true);
 
         const orderPrice = new TextInputBuilder()
-            .setCustomId('orderPriceId')
+            .setCustomId('orderPrice_Id')
             .setLabel("Prix de la commande")
             .setPlaceholder(`Insérer le prix de votre commande ?`)
             .setStyle(TextInputStyle.Short)
             .setRequired(true);
 
         const deadlineDate = new TextInputBuilder()
-            .setCustomId('deadlineDateId')
+            .setCustomId('deadlineDate_Id')
             .setLabel("deadline de la commande")
             .setPlaceholder(`Insérer la deadline de votre commande ?`)
-            .setStyle(TextInputStyle.Short)
-            .setRequired(true);
-
-        const cdcGoogleLink = new TextInputBuilder()
-            .setCustomId('cdcGoogleLinkId')
-            .setLabel("lien du cahier des charges")
-            .setPlaceholder(`Insérer le lien vers votre cahier des charges ?`)
             .setStyle(TextInputStyle.Short)
             .setRequired(true);
         
@@ -60,10 +53,9 @@ module.exports = {
         const secondActionRow = new ActionRowBuilder().addComponents(serverName);
         const thirdActionRow = new ActionRowBuilder().addComponents(serverVersion);
         const fourthActionRow = new ActionRowBuilder().addComponents(orderPrice);
-        const fifthActionRow = new ActionRowBuilder().addComponents(deadlineDate);
-        const sixthdActionRow = new ActionRowBuilder().addComponents(cdcGoogleLink);
+        const fifthActionRow = new ActionRowBuilder().addComponents(deadlineDate);;
 
-        modal.addComponents(firstActionRow, secondActionRow, thirdActionRow, fourthActionRow, fifthActionRow, sixthdActionRow);
+        modal.addComponents(firstActionRow, secondActionRow, thirdActionRow, fourthActionRow, fifthActionRow);
 
         await interaction.showModal(modal);
 	},
