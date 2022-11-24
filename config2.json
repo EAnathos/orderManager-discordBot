@@ -1,6 +1,9 @@
 {
 	"TOKEN": "votre-token-va-ici",
     "CLIENTID" : "Id de votre bot",
-    "GUILDID" : "Id de votre serveur"
-    
+    "GUILDID" : "Id de votre serveur",
+    "CREATED_CATEGORY" : "rentrez vos id de category",
+    "IN_PROGRESS_CATEGORY" : "...",
+    "BILLING_CATEGORY" : "...",
+    "FINISH_CATEGORY" : "..."
 }
