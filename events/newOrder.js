@@ -1,5 +1,5 @@
-const { EmbedBuilder, ButtonBuilder } = require('discord.js');
-const { CREATED_CATEGORY, COMMAND_CHANNEL } = require('../config.json');
+const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
+const { CREATED_CATEGORY } = require('../config.json');
 
 module.exports = {
     name : 'interactionCreate',
@@ -21,8 +21,32 @@ module.exports = {
                         .setColor('DarkPurple')
                         .setFooter({ text: `Bot créé par @Anathos#7090`, iconURL: "https://avatars.githubusercontent.com/u/83123402?v=4" })
                         .setTimestamp()
+                    
+                    const row1 = new ActionRowBuilder()
+                        .addComponents(
+                            new ButtonBuilder()
+                                .setCustomId('inProgress_Id')
+                                .setLabel('Déplacer dans en cours')
+                                .setStyle(ButtonStyle.Success)
+                        )
+                    
+                    const row2 = new ActionRowBuilder()
+                        .addComponents(
+                            new ButtonBuilder()
+                                .setCustomId('CD_Id')
+                                .setLabel('Ajouter le cdc')
+                                .setStyle(ButtonStyle.Primary)
+                        )
+                    
+                    const row3 = new ActionRowBuilder()
+                        .addComponents(
+                            new ButtonBuilder()
+                                .setCustomId('modify_Id')
+                                .setLabel('Modifier la commande')
+                                .setStyle(ButtonStyle.Secondary)
+                        )
 
-                    await interaction.guild.channels.cache.get(channel.id).send({ embeds: [embed] });
+                    await interaction.guild.channels.cache.get(channel.id).send({ embeds: [embed], components: [row1, row2, row3] });
                     interaction.reply({ content: `✅Votre commande a été envoyée dans le salon <#${channel.id}>`, ephemeral: true});
                 });
             }
