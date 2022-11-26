@@ -16,37 +16,37 @@ module.exports = {
                             `⚜️ **Nom du serveur :** ${interaction.fields.getTextInputValue('serverName_Id')}
                             \n🎫 **Nom du plugin :** ${interaction.fields.getTextInputValue('pluginName_Id')}
                             \n💵 **Prix de la commande :** ${interaction.fields.getTextInputValue('orderPrice_Id')} €
-                            \n⌛ **Deadline de la commande :** ${interaction.fields.getTextInputValue('deadlineDate_Id')}`
+                            \n⌛ **Deadline de la commande :** ${interaction.fields.getTextInputValue('deadlineDate_Id')}
+                            \n🗄️ **Status de la commande :** À réaliser`
                         )
-                        .setColor('DarkPurple')
+                        .setColor('DarkBlue')
                         .setFooter({ text: `Bot créé par @Anathos#7090`, iconURL: "https://avatars.githubusercontent.com/u/83123402?v=4" })
                         .setTimestamp()
                     
-                    const row1 = new ActionRowBuilder()
+                    const rows = new ActionRowBuilder()
                         .addComponents(
                             new ButtonBuilder()
-                                .setCustomId('inProgress_Id')
-                                .setLabel('Déplacer dans en cours')
+                                .setCustomId('move_Id')
+                                .setLabel('Déplacer la commande')
                                 .setStyle(ButtonStyle.Success)
-                        )
-                    
-                    const row2 = new ActionRowBuilder()
-                        .addComponents(
+                        ).addComponents(
                             new ButtonBuilder()
-                                .setCustomId('CD_Id')
-                                .setLabel('Ajouter le cdc')
+                                .setCustomId('cdc_Id')
+                                .setLabel('Ajouter le CDC')
                                 .setStyle(ButtonStyle.Primary)
-                        )
-                    
-                    const row3 = new ActionRowBuilder()
-                        .addComponents(
+                        ).addComponents(
                             new ButtonBuilder()
                                 .setCustomId('modify_Id')
                                 .setLabel('Modifier la commande')
                                 .setStyle(ButtonStyle.Secondary)
+                        ).addComponents(
+                            new ButtonBuilder()
+                                .setCustomId('delete_Id')
+                                .setLabel('Supprimer la commande')
+                                .setStyle(ButtonStyle.Danger)
                         )
 
-                    await interaction.guild.channels.cache.get(channel.id).send({ embeds: [embed], components: [row1, row2, row3] });
+                    await interaction.guild.channels.cache.get(channel.id).send({ embeds: [embed], components: [rows] });
                     interaction.reply({ content: `✅Votre commande a été envoyée dans le salon <#${channel.id}>`, ephemeral: true});
                 });
             }
